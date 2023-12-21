@@ -1,0 +1,36 @@
+#aboutpage{
+    @extend .center;
+    max-width: 1100px;
+    padding: 3rem 0;
+
+    .aboutflex{
+        display: flex;
+        gap: 3rem;
+        justify-content: space-between;
+        padding: 5rem 3rem;
+        align-items: center;
+
+        &:nth-of-type(odd){
+            flex-direction: row-reverse;
+        }
+
+        .image{
+            width: 50%;
+            height: 350px;
+            background: lightgrey;
+        }
+
+
+        .texts{
+            width: 50%;
+
+            .heading{
+                font-size: 1.5rem;
+            }
+
+            p{
+                color: grey;
+            }
+        }
+    }
+}

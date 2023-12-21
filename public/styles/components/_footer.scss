@@ -1,0 +1,41 @@
+
+footer{
+    padding: 4rem 2rem;
+    // background: grey;
+    background: darken($primary,10);
+
+    div{
+        @extend .center;
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+        padding: 4rem 1rem 5rem;
+        max-width: 1100px;
+
+        p.abouttext{
+            max-width: 500px;
+            color: #fff;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: .65rem;
+
+            a{
+                text-decoration: none;
+                font-size: .9rem;
+                color: #fff;
+            }
+        }
+    }
+
+    .copy{
+        text-align: center;
+        background: #fff;
+        color: $primary;
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}

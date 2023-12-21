@@ -1,0 +1,206 @@
+#hero {
+    padding: 4rem 3rem;
+    background: linear-gradient(rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.9)), url('../../images/homebg.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+
+
+    .image {
+        height: 470px;
+        background: grey;
+        position: relative;
+        width: 80%;
+
+        img{
+            position: absolute;
+        }
+        // float: right;
+    }
+
+    .intro {
+        // display: inline-block;
+        padding: 2rem 2rem;
+        background: rgba(255, 255, 255, 0.98);
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 0%;
+        width: 50%;
+
+
+        h1 {
+            color: $primary;
+        }
+
+        p {
+            padding: .85rem 0;
+        }
+    }
+}
+
+#about {
+    display: flex;
+    align-items: flex-start;
+    background: lighten($primary,47);
+
+
+    &>div {
+        width: 50%;
+
+        &:first-child {
+            padding: 7rem 3rem;
+        }
+    }
+
+    .images {
+        height: 400px;
+        // background: red;
+        position: relative;
+
+        div {
+            position: absolute;
+            width: 33%;
+            height: 80%;
+            top: 2rem;
+            left: 0;
+            background: lightgrey;
+
+            &.image1 {
+                top: -1rem;
+               left: 0;
+            }
+
+            &.image2 {
+                left: 50%;
+                bottom: 0;
+                top: auto;
+                transform: translateX(-50%);
+                z-index: 1;
+                border: 8px solid lighten($primary,47);
+                width: 40%;
+            }
+
+            &.image3 {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    .texts {
+        padding: 4rem 3rem;
+        background: #fff;
+
+        h3 {
+            font-size: 1.7rem;
+            font-weight: 300;
+            // padding-bottom: 2rem;
+            color: $primary;
+        }
+
+        p {
+            padding: 1.5rem 0;
+            line-height: 150%;
+        }
+    }
+}
+
+#products{
+    padding: 7rem 0;
+    .productgrid{
+        @extend .center;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 3rem;
+        padding: 3rem 0;
+        max-width: 1000px;
+
+        .product{
+            height: 400px;
+            background: lightgrey;
+            position: relative;
+
+            .details{
+                position: absolute;
+                bottom: 3rem;
+                left: 0;
+                background: #fff;
+                padding: 1rem;
+                width: 90%;
+
+                .productname{
+                    color: $primary;
+                    font-size: .9rem;
+                    font-weight: 600;
+                }
+
+                .productdescription{
+                    padding: 1rem 0;
+                    color: grey;
+                    font-size: .9rem;
+                }
+
+                .click{
+                    transform: scale(.9);
+                    transform-origin: 0;
+                }
+            }
+        }
+    }
+}
+
+#gallery{
+    padding: 7rem 0rem;
+    background: lightgrey;
+    .images{
+        height: 550px;
+        background: grey;
+        margin: 2rem 0;
+        @extend .center;
+        max-width: 1100px;
+    }
+}
+
+#testimonials{
+    display: flex;
+
+    &>div{
+        width: 50%;
+        padding: 7rem 4rem 9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: lightgrey;
+
+        &.images{
+            .image{
+                background:grey;
+                height: 400px;
+                width: 100%;
+            }
+        }
+
+      &.texts{
+        background: #fff;
+
+        .testimonial{
+            padding: 0 2rem;
+            .heading{
+                margin-bottom: 2rem;
+            }
+
+            p.name{
+                color: $primary;
+                font-weight: 600;
+            }
+
+            p.comment{
+                color: grey;
+                padding: .5rem 0;
+            }
+        }
+      }
+    }
+}

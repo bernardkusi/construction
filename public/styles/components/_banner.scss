@@ -1,0 +1,36 @@
+.banner{
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    background: lighten($primary,47);
+
+    .image{
+        position: relative;
+        width: 80%;
+        height: 250px;
+        background: lightgrey;
+        z-index: 1;
+
+        .texts{
+            position: absolute;
+            left: -20%;
+            background: #fff;
+            padding: 3rem;
+            top: 50%;
+            width: 50%;
+            transform: translateY(-50%);
+
+            .heading{
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+
+            p{
+                color: grey;
+                padding: .55rem 0;
+            }
+
+        }
+    }
+}
