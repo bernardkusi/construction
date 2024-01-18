@@ -1,66 +1,29 @@
-@extends("layout.layout")
-@section("content")
-<x-banner page="Our Blogs"/>
+@extends('layout.layout')
+@section('content')
+    <x-banner page="Our Blogs" />
 
-<div id="blogspage">
-    <div class="blog">
-        <div class="image">
+    <div id="blogspage">
+        @if (count($blogs) > 0)
+        @foreach ($blogs as $blog)
+        <div class="blog">
+            <div class="image">
 
+            </div>
+            <div class="texts">
+                <h5 class="title">
+                    {{ $blog->blogname }}
+                </h5>
+                <p>
+                    {{ $blog->blogtext }}
+                </p>
+            </div>
         </div>
-        <div class="texts">
-            <h5 class="title">
-                Lorem ipsum dolor sit.
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quas, minima sed aspernatur earum esse consectetur, eligendi consequuntur veniam iusto neque quae delectus dignissimos harum ex ad consequatur laboriosam est ratione nostrum quasi. Asperiores ratione nemo sint ipsam corporis. Ratione laboriosam cum eum voluptatum ipsa!
-            </p>
-        </div>
+        @endforeach
+        @else
+            <p style="text-align: center;
+            color:grey">No Blogs TO Show</p>
+        @endif
+        {{$blogs->links()}}
     </div>
 
-    
-    <div class="blog">
-        <div class="image">
-
-        </div>
-        <div class="texts">
-            <h5 class="title">
-                Lorem ipsum dolor sit.
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quas, minima sed aspernatur earum esse consectetur, eligendi consequuntur veniam iusto neque quae delectus dignissimos harum ex ad consequatur laboriosam est ratione nostrum quasi. Asperiores ratione nemo sint ipsam corporis. Ratione laboriosam cum eum voluptatum ipsa!
-            </p>
-        </div>
-    </div>
-
-    <div class="blog">
-        <div class="image">
-
-        </div>
-        <div class="texts">
-            <h5 class="title">
-                Lorem ipsum dolor sit.
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quas, minima sed aspernatur earum esse consectetur, eligendi consequuntur veniam iusto neque quae delectus dignissimos harum ex ad consequatur laboriosam est ratione nostrum quasi. Asperiores ratione nemo sint ipsam corporis. Ratione laboriosam cum eum voluptatum ipsa!
-            </p>
-        </div>
-    </div>
-
-    <div class="blog">
-        <div class="image">
-
-        </div>
-        <div class="texts">
-            <h5 class="title">
-                Lorem ipsum dolor sit.
-            </h5>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere quas, minima sed aspernatur earum esse consectetur, eligendi consequuntur veniam iusto neque quae delectus dignissimos harum ex ad consequatur laboriosam est ratione nostrum quasi. Asperiores ratione nemo sint ipsam corporis. Ratione laboriosam cum eum voluptatum ipsa!
-            </p>
-        </div>
-    </div>
-
-
-</div>
-
-@endsection
+@endsection    

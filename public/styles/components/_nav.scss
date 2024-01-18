@@ -1,16 +1,17 @@
-
 header{
     position: sticky;
     width: 100%;
     z-index: 10;
     top: 0;
+    background: $primary;
     nav{
         display: flex;
         justify-content: space-between;
         height: 70px;
         align-items: flex-end;
         padding: 1rem 3rem;
-        background: $primary;
+        @extend .center;
+        max-width: 1300px;
 
         .logo{
             color: #fff;
@@ -22,11 +23,59 @@ header{
         ul{
             display: flex;
             gap: 1.75rem;
+            align-items: flex-end;
+
+            button{
+                border: none;
+                outline: none;
+                color: #fff;
+                position: relative;
+                background: transparent;
+                cursor: pointer;
+
+                &:focus-within ul{
+                    display: flex;
+                }
+
+                ul{
+                    cursor: auto;
+                    display: none;
+                    position: absolute;
+                    top: 2rem;
+                    border-radius: .65rem;
+                    flex-direction: column;
+                    padding: 1rem ;
+                    background: #fff;
+                    align-items: flex-start;
+                    gap: .55rem;
+                    box-shadow: 0 0 .3rem #0000004d;
+
+                    &:focus-within{
+                        display: flex;
+                    }
+
+                    
+                    a{
+                        color: grey;
+                        font-size: .8rem;
+                        padding-right: 2rem;
+                        transition: all .2s;
+
+                        &:hover{
+                            color: $primary;
+                        }
+                    }
+                }
+            }
 
             a{
                 text-decoration: none;
                 color: #fff;
                 font-size: .9rem;
+
+                &.click{
+                    margin-left: 3rem;
+                }
             }
         }
     }

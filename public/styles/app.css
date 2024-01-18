@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-.center, #blogspage, #contactpage .contact .form form .click, #contactpage, #aboutpage, #gallery .images, #products .productgrid, footer div, body {
+.center, #loginpage .form, #blogspage, #contactpage, #aboutpage, #testimonials, #gallery .images, #products .productgrid, #hero, .pagemessage, .form form .click, header nav, footer div, .adminpage, .page {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
 
 body {
-  max-width: 1300px;
+  background: rgb(238, 238, 238);
 }
 
 img {
@@ -36,9 +36,31 @@ img {
 .click:hover {
   background: #a54f2c;
 }
+.click.secondary {
+  background: #fff;
+  color: rgb(185, 89, 49);
+}
+.click.secondary:hover {
+  background: #f5e2da;
+}
+
+.page {
+  max-width: 1300px;
+}
+
+.adminpage {
+  max-width: 1100px;
+  padding: 5rem 2rem;
+}
+.adminpage .heading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  padding-bottom: 0.65rem;
+}
 
 main {
   min-height: 100vh;
+  background: #fff;
 }
 main .heading {
   font-size: 1.9rem;
@@ -53,6 +75,15 @@ main .subheading {
 }
 main .headings {
   margin-left: 8rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex a {
+  color: rgb(185, 89, 49);
 }
 
 footer {
@@ -94,6 +125,7 @@ header {
   width: 100%;
   z-index: 10;
   top: 0;
+  background: rgb(185, 89, 49);
 }
 header nav {
   display: flex;
@@ -101,7 +133,7 @@ header nav {
   height: 70px;
   align-items: flex-end;
   padding: 1rem 3rem;
-  background: rgb(185, 89, 49);
+  max-width: 1300px;
 }
 header nav .logo {
   color: #fff;
@@ -112,11 +144,51 @@ header nav .logo {
 header nav ul {
   display: flex;
   gap: 1.75rem;
+  align-items: flex-end;
+}
+header nav ul button {
+  border: none;
+  outline: none;
+  color: #fff;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+}
+header nav ul button:focus-within ul {
+  display: flex;
+}
+header nav ul button ul {
+  cursor: auto;
+  display: none;
+  position: absolute;
+  top: 2rem;
+  border-radius: 0.65rem;
+  flex-direction: column;
+  padding: 1rem;
+  background: #fff;
+  align-items: flex-start;
+  gap: 0.55rem;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3019607843);
+}
+header nav ul button ul:focus-within {
+  display: flex;
+}
+header nav ul button ul a {
+  color: grey;
+  font-size: 0.8rem;
+  padding-right: 2rem;
+  transition: all 0.2s;
+}
+header nav ul button ul a:hover {
+  color: rgb(185, 89, 49);
 }
 header nav ul a {
   text-decoration: none;
   color: #fff;
   font-size: 0.9rem;
+}
+header nav ul a.click {
+  margin-left: 3rem;
 }
 
 .banner {
@@ -151,6 +223,75 @@ header nav ul a {
   padding: 0.55rem 0;
 }
 
+.form {
+  width: 50%;
+  padding: 2rem 1rem;
+}
+.form .label {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 1.5rem;
+  color: rgb(185, 89, 49);
+}
+.form form .control {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.4rem;
+  padding-bottom: 1rem;
+}
+.form form .control input, .form form .control textarea {
+  width: 100%;
+  border: 1px solid lightgrey;
+  outline: none;
+  padding: 0.65rem;
+}
+.form form .control input:focus, .form form .control textarea:focus {
+  border-color: rgb(185, 89, 49);
+}
+.form form .control input:focus + label, .form form .control textarea:focus + label {
+  color: rgb(185, 89, 49);
+}
+.form form .control textarea {
+  resize: none;
+  height: 5rem;
+}
+.form form .control small {
+  color: rgb(255, 55, 0);
+  font-size: 0.85rem;
+}
+.form form .control label {
+  font-size: 0.9rem;
+  color: grey;
+}
+.pagemessage {
+  position: fixed;
+  top: 100px;
+  z-index: 10;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.862745098);
+  border: 1px solid rgb(185, 89, 49);
+  text-align: center;
+}
+
+table {
+  border: 1px solid rgb(185, 89, 49);
+  border-collapse: collapse;
+  width: 100%;
+}
+table thead td {
+  font-weight: 700;
+  color: rgb(142, 142, 142);
+}
+table td {
+  border: 1px solid rgb(185, 89, 49);
+  padding: 0.45rem 1rem;
+  color: rgb(142, 142, 142);
+}
+
 #hero {
   padding: 4rem 3rem;
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../../images/homebg.jpg");
@@ -158,6 +299,7 @@ header nav ul a {
   background-size: cover;
   display: flex;
   justify-content: flex-end;
+  max-width: 1300px;
 }
 #hero .image {
   height: 470px;
@@ -239,6 +381,7 @@ header nav ul a {
 }
 
 #products {
+  background: #fff;
   padding: 7rem 0;
 }
 #products .productgrid {
@@ -278,16 +421,44 @@ header nav ul a {
 
 #gallery {
   padding: 7rem 0rem;
-  background: lightgrey;
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("../../images/homebg.jpg");
+  background-position: center;
+  background-size: cover;
 }
 #gallery .images {
   height: 550px;
-  background: grey;
   margin: 2rem 0;
   max-width: 1100px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  grid-template-areas: "p1 p2 p2 p3 " "p4 p4 p5 p5";
+}
+#gallery .images .p1 {
+  grid-area: p1;
+  background: lightgrey;
+}
+#gallery .images .p2 {
+  grid-area: p2;
+  background: lightgrey;
+}
+#gallery .images .p3 {
+  grid-area: p3;
+  background: lightgrey;
+}
+#gallery .images .p4 {
+  grid-area: p4;
+  background: lightgrey;
+}
+#gallery .images .p5 {
+  grid-area: p5;
+  background: lightgrey;
 }
 
 #testimonials {
+  max-width: 1300px;
   display: flex;
 }
 #testimonials > div {
@@ -296,7 +467,9 @@ header nav ul a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightgrey;
+  background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("../../images/homebg.jpg");
+  background-position: center;
+  background-size: cover;
 }
 #testimonials > div.images .image {
   background: grey;
@@ -377,37 +550,7 @@ header nav ul a {
   padding: 4rem 3rem;
   background: #fff;
 }
-#contactpage .contact .form {
-  width: 50%;
-  padding: 2rem 1rem;
-}
-#contactpage .contact .form .label {
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding-bottom: 1.5rem;
-  color: rgb(185, 89, 49);
-}
-#contactpage .contact .form form .control {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 0.4rem;
-  padding-bottom: 1rem;
-}
-#contactpage .contact .form form .control input, #contactpage .contact .form form .control textarea {
-  width: 100%;
-  border: 1px solid lightgrey;
-  outline: none;
-  padding: 0.65rem;
-}
-#contactpage .contact .form form .control textarea {
-  resize: none;
-  height: 5rem;
-}
-#contactpage .contact .form form .control label {
-  font-size: 0.9rem;
-  color: grey;
-}
+
 #blogspage {
   max-width: 1100px;
   padding: 5rem 2rem;
@@ -427,4 +570,21 @@ header nav ul a {
 }
 #blogspage .blog .texts p {
   color: grey;
+}
+
+#loginpage {
+  background: #f7e9e2;
+  padding: 5rem 0;
+  min-height: 100vh;
+}
+#loginpage .form {
+  max-width: 500px;
+  background: #fff;
+}
+#loginpage .form form .redirect {
+  padding: 1rem 0;
+  color: grey;
+}
+#loginpage .form form .redirect a {
+  color: rgb(185, 89, 49);
 }/*# sourceMappingURL=app.css.map */

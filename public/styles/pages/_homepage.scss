@@ -1,10 +1,12 @@
 #hero {
     padding: 4rem 3rem;
-    background: linear-gradient(rgba(255, 255, 255, 0.9),rgba(255, 255, 255, 0.9)), url('../../images/homebg.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../../images/homebg.jpg');
     background-position: center;
     background-size: cover;
     display: flex;
     justify-content: flex-end;
+    @extend .center;
+    max-width: 1300px;
 
 
     .image {
@@ -13,9 +15,10 @@
         position: relative;
         width: 80%;
 
-        img{
+        img {
             position: absolute;
         }
+
         // float: right;
     }
 
@@ -43,7 +46,7 @@
 #about {
     display: flex;
     align-items: flex-start;
-    background: lighten($primary,47);
+    background: lighten($primary, 47);
 
 
     &>div {
@@ -69,7 +72,7 @@
 
             &.image1 {
                 top: -1rem;
-               left: 0;
+                left: 0;
             }
 
             &.image2 {
@@ -78,7 +81,7 @@
                 top: auto;
                 transform: translateX(-50%);
                 z-index: 1;
-                border: 8px solid lighten($primary,47);
+                border: 8px solid lighten($primary, 47);
                 width: 40%;
             }
 
@@ -107,22 +110,24 @@
     }
 }
 
-#products{
+#products {
+    background: #fff;
     padding: 7rem 0;
-    .productgrid{
+
+    .productgrid {
         @extend .center;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
         padding: 3rem 0;
         max-width: 1000px;
 
-        .product{
+        .product {
             height: 400px;
             background: lightgrey;
             position: relative;
 
-            .details{
+            .details {
                 position: absolute;
                 bottom: 3rem;
                 left: 0;
@@ -130,19 +135,19 @@
                 padding: 1rem;
                 width: 90%;
 
-                .productname{
+                .productname {
                     color: $primary;
                     font-size: .9rem;
                     font-weight: 600;
                 }
 
-                .productdescription{
+                .productdescription {
                     padding: 1rem 0;
                     color: grey;
                     font-size: .9rem;
                 }
 
-                .click{
+                .click {
                     transform: scale(.9);
                     transform-origin: 0;
                 }
@@ -151,56 +156,100 @@
     }
 }
 
-#gallery{
+#gallery {
     padding: 7rem 0rem;
-    background: lightgrey;
-    .images{
+    background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../../images/homebg.jpg');
+    background-position: center;
+    background-size: cover;
+
+    .images {
         height: 550px;
-        background: grey;
+        // background: grey;
         margin: 2rem 0;
         @extend .center;
         max-width: 1100px;
+        padding: 10px;
+
+        //Images grid
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 10px;
+        grid-template-areas: "p1 p2 p2 p3 "
+        "p4 p4 p5 p5";
+
+
+
+        .p1 {
+            grid-area: p1;
+            background: lightgrey;
+        }
+
+        .p2 {
+            grid-area: p2;
+            background: lightgrey;
+        }
+
+        .p3 {
+            grid-area: p3;
+            background: lightgrey;
+        }
+
+        .p4 {
+            grid-area: p4;
+            background: lightgrey;
+        }
+
+        .p5 {
+            grid-area: p5;
+            background: lightgrey;
+        }
     }
 }
 
-#testimonials{
+#testimonials {
+    @extend .center;
+    max-width: 1300px;
     display: flex;
 
-    &>div{
+    &>div {
         width: 50%;
         padding: 7rem 4rem 9rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: lightgrey;
+        background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('../../images/homebg.jpg');
+        background-position: center;
+        background-size: cover;
 
-        &.images{
-            .image{
-                background:grey;
+        &.images {
+            .image {
+                background: grey;
                 height: 400px;
                 width: 100%;
             }
         }
 
-      &.texts{
-        background: #fff;
+        &.texts {
+            background: #fff;
 
-        .testimonial{
-            padding: 0 2rem;
-            .heading{
-                margin-bottom: 2rem;
-            }
+            .testimonial {
+                padding: 0 2rem;
 
-            p.name{
-                color: $primary;
-                font-weight: 600;
-            }
+                .heading {
+                    margin-bottom: 2rem;
+                }
 
-            p.comment{
-                color: grey;
-                padding: .5rem 0;
+                p.name {
+                    color: $primary;
+                    font-weight: 600;
+                }
+
+                p.comment {
+                    color: grey;
+                    padding: .5rem 0;
+                }
             }
         }
-      }
     }
 }

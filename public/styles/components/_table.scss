@@ -1,0 +1,18 @@
+table{
+    border: 1px solid $primary;
+    border-collapse: collapse;
+    width: 100%;
+
+    thead{
+        td{
+            font-weight: 700;
+            color: $text;
+        }
+    }
+
+    td{
+        border: 1px solid $primary;
+        padding: .45rem 1rem;
+        color: $text;
+    }
+}

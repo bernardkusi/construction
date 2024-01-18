@@ -14,7 +14,8 @@
     </div>
     <div class="form">
         <p class="label">Send Us A Message</p>
-        <form action="">
+        <form action={{ route('createmessage') }} method="POST">
+            @csrf
             <div class="control">
                 <input type="text" name="name" id="name">
                 <label for="name">Name</label>
